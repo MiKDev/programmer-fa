@@ -87,12 +87,12 @@ export const isTweetExtended = (tweet: any): boolean => (
 );
 
 /**
- * Whether a tweet is in Farsi or not.
+ * Whether a tweet is in English or not.
  * This behaviour relies on Twitter API.
  * @param {*} tweet - The tweet object
  * @return boolean
  */
-export const isTweetFarsi = (tweet: any): boolean => tweet.lang === 'fa';
+export const isTweetEnglish = (tweet: any): boolean => tweet.lang === 'en';
 
 /**
  * Whether a tweet is a retweet or not.
@@ -287,7 +287,7 @@ export const isRetweetedByMyself = (tweet: any): boolean => tweet.retweeted;
  * @return {boolean} - Whether the tweet is validated or not
  */
 export const validateInitialTweet = (tweet: any): boolean => {
-  if (!isTweetFarsi(tweet)) {
+  if (!isTweetEnglish(tweet)) {
     return false;
   }
 
